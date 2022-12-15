@@ -1,0 +1,29 @@
+Classes:
+- General class for describing a basic cell - abstract class?
+    * speed
+    * other attributes
+    * method for collision detection (boolean)
+    * movmement - tuple of directions and corresponding speeds
+    * Class for immune cells that extends the general cell class - might be an abstract class later
+        * Specific qualities
+        * What happens when a collision happens
+    * Class for pathogens that extends general cell class - might be an abstract class later
+        * Specific qualities
+        * What happens when a collision happens
+- Non-cell/passive objects
+    * starting position
+    * movement - optional
+- Class to define the simulation
+    * Game loop
+
+Game loop every tick:
+- 1. Calculate theoretical position of cells
+- 2. Check collisions
+        - If collision = healthy/pathogen: 
+            - healthy cell becomes pathogen (change type or delete healthy and pathogen continues)
+            - pathogen attaches for a fixed time before healthy cell death
+        - If collision = pathogen/pathogen: correct position by preventing overlap
+        - If collision = pathogen/window border: correct position of cells (not allowing movement into border)
+- 3. Correct the calculated position
+- 4. Move cells
+    - 1. Update position of cells (by same velocity for now)
